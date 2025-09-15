@@ -84,19 +84,19 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">Nerfies: Deformable Neural Radiance Fields</h1>
+          <h1 class="title is-1 publication-title">Single-View 3D-Aware Representations for Reinforcement Learning by Cross-View Neural Radiance Fields</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
-              <a href="https://keunhong.com">Keunhong Park</a><sup>1</sup>,</span>
+              <a>Daesol Cho</a><sup>1, *</sup>,</span>
             <span class="author-block">
-              <a href="https://utkarshsinha.com">Utkarsh Sinha</a><sup>2</sup>,</span>
+              <a>Seungyeon Yoo</a><sup>2, *</sup>,</span>
             <span class="author-block">
-              <a href="https://jonbarron.info">Jonathan T. Barron</a><sup>2</sup>,
+              <a>Dongseok Shim</a><sup>3</sup>,
             </span>
             <span class="author-block">
-              <a href="http://sofienbouaziz.com">Sofien Bouaziz</a><sup>2</sup>,
+              <a>H. Jin Kim</a><sup>2</sup>,
             </span>
-            <span class="author-block">
+            <!-- <span class="author-block">
               <a href="https://www.danbgoldman.com">Dan B Goldman</a><sup>2</sup>,
             </span>
             <span class="author-block">
@@ -104,18 +104,20 @@
             </span>
             <span class="author-block">
               <a href="http://www.ricardomartinbrualla.com">Ricardo Martin-Brualla</a><sup>2</sup>
-            </span>
+            </span> -->
           </div>
 
           <div class="is-size-5 publication-authors">
-            <span class="author-block"><sup>1</sup>University of Washington,</span>
-            <span class="author-block"><sup>2</sup>Google Research</span>
+            <span class="author-block"><sup>*</sup>Equal contribution</span>
+            <span class="author-block"><sup>1</sup>Georgia Institute of Technology,</span>
+            <span class="author-block"><sup>2</sup>Seoul National University</span>
+            <span class="author-block"><sup>3</sup>Sony Group Corporation</span>
           </div>
 
           <div class="column has-text-centered">
             <div class="publication-links">
               <!-- PDF Link. -->
-              <span class="link-block">
+              <!-- <span class="link-block">
                 <a href="https://arxiv.org/pdf/2011.12948"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
@@ -132,9 +134,9 @@
                   </span>
                   <span>arXiv</span>
                 </a>
-              </span>
+              </span> -->
               <!-- Video Link. -->
-              <span class="link-block">
+              <!-- <span class="link-block">
                 <a href="https://www.youtube.com/watch?v=MrKrnHhk8IA"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
@@ -142,9 +144,9 @@
                   </span>
                   <span>Video</span>
                 </a>
-              </span>
+              </span> -->
               <!-- Code Link. -->
-              <span class="link-block">
+              <!-- <span class="link-block">
                 <a href="https://github.com/google/nerfies"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
@@ -152,16 +154,16 @@
                   </span>
                   <span>Code</span>
                   </a>
-              </span>
+              </span> -->
               <!-- Dataset Link. -->
-              <span class="link-block">
+              <!-- <span class="link-block">
                 <a href="https://github.com/google/nerfies/releases/tag/0.1"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="far fa-images"></i>
                   </span>
                   <span>Data</span>
-                  </a>
+                  </a> -->
             </div>
 
           </div>
@@ -171,7 +173,7 @@
   </div>
 </section>
 
-<section class="hero teaser">
+<!-- <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
       <video id="teaser" autoplay muted loop playsinline height="100%">
@@ -185,10 +187,10 @@
       </h2>
     </div>
   </div>
-</section>
+</section> -->
 
 
-<section class="hero is-light is-small">
+<!-- <section class="hero is-light is-small">
   <div class="hero-body">
     <div class="container">
       <div id="results-carousel" class="carousel results-carousel">
@@ -243,7 +245,7 @@
       </div>
     </div>
   </div>
-</section>
+</section> -->
 
 
 <section class="section">
@@ -254,10 +256,25 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            We present the first method capable of photorealistically reconstructing a non-rigidly
-            deforming scene using photos/videos captured casually from mobile phones.
+            Reinforcement learning (RL) has enabled robots to develop complex skills, 
+            but its success in image-based tasks often depends on effective representation learning. 
+            Prior works have primarily focused on 2D representations, often overlooking the inherent 
+            3D geometric structure of the world, or have attempted to learn 3D representations that 
+            require extensive resources such as synchronized multi-view images even during deployment. 
+            To address these issues, we propose a novel RL framework that extracts 3D-aware representations 
+            from single-view RGB input, without requiring camera pose or synchronized multi-view images 
+            during the downstream RL. 
+            Our method employs an autoencoder architecture, using a masked Vision Transformer (ViT) 
+            as the encoder and a latent-conditioned Neural Radiance Fields (NeRF) as the decoder, 
+            trained with cross-view completion to implicitly capture fine-grained, 3D geometry-aware 
+            representations. Additionally, we utilize a time contrastive loss that further regularizes 
+            the learned representation for consistency across different viewpoints, which enables 
+            viewpoint-robust robot manipulations. Our method significantly enhances the RL agent's 
+            performance both in simulation and real-world experiments, demonstrating superior 
+            effectiveness compared to prior 3D-aware representation-based methods, 
+            even when using only single-view RGB images during deployment.
           </p>
-          <p>
+          <!-- <p>
             Our approach augments neural radiance fields
             (NeRF) by optimizing an
             additional continuous volumetric deformation field that warps each observed point into a
@@ -268,8 +285,8 @@
             By adapting principles from geometry processing and physical simulation to NeRF-like
             models, we propose an elastic regularization of the deformation field that further
             improves robustness.
-          </p>
-          <p>
+          </p> -->
+          <!-- <p>
             We show that <span class="dnerf">Nerfies</span> can turn casually captured selfie
             photos/videos into deformable NeRF
             models that allow for photorealistic renderings of the subject from arbitrary
@@ -279,7 +296,7 @@
             images of the same pose at different viewpoints. We show that our method faithfully
             reconstructs non-rigidly deforming scenes and reproduces unseen views with high
             fidelity.
-          </p>
+          </p> -->
         </div>
       </div>
     </div>
@@ -290,8 +307,12 @@
       <div class="column is-four-fifths">
         <h2 class="title is-3">Video</h2>
         <div class="publication-video">
-          <iframe src="https://www.youtube.com/embed/MrKrnHhk8IA?rel=0&amp;showinfo=0"
-                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+          <video id="teaser" autoplay muted loop playsinline height="100%">
+            <source src="./static/videos/SinCro_RA-L_final_video.mp4"
+                    type="video/mp4">
+          </video>
+          <!-- <iframe src="https://www.youtube.com/embed/MrKrnHhk8IA?rel=0&amp;showinfo=0"
+                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> -->
         </div>
       </div>
     </div>
@@ -306,7 +327,7 @@
     <div class="columns is-centered">
 
       <!-- Visual Effects. -->
-      <div class="column">
+      <!-- <div class="column">
         <div class="content">
           <h2 class="title is-3">Visual Effects</h2>
           <p>
@@ -318,11 +339,11 @@
                     type="video/mp4">
           </video>
         </div>
-      </div>
+      </div> -->
       <!--/ Visual Effects. -->
 
       <!-- Matting. -->
-      <div class="column">
+      <!-- <div class="column">
         <h2 class="title is-3">Matting</h2>
         <div class="columns is-centered">
           <div class="column content">
@@ -337,7 +358,7 @@
           </div>
 
         </div>
-      </div>
+      </div> -->
     </div>
     <!--/ Matting. -->
 
@@ -347,7 +368,7 @@
         <h2 class="title is-3">Animation</h2>
 
         <!-- Interpolating. -->
-        <h3 class="title is-4">Interpolating states</h3>
+        <!-- <h3 class="title is-4">Interpolating states</h3>
         <div class="content has-text-justified">
           <p>
             We can also animate the scene by interpolating the deformation latent codes of two input
@@ -377,11 +398,11 @@
             <p class="is-bold">End Frame</p>
           </div>
         </div>
-        <br/>
+        <br/> -->
         <!--/ Interpolating. -->
 
         <!-- Re-rendering. -->
-        <h3 class="title is-4">Re-rendering the input video</h3>
+        <!-- <h3 class="title is-4">Re-rendering the input video</h3>
         <div class="content has-text-justified">
           <p>
             Using <span class="dnerf">Nerfies</span>, you can re-render a video from a novel
@@ -398,7 +419,7 @@
             <source src="./static/videos/replay.mp4"
                     type="video/mp4">
           </video>
-        </div>
+        </div> -->
         <!--/ Re-rendering. -->
 
       </div>
@@ -407,7 +428,7 @@
 
 
     <!-- Concurrent Work. -->
-    <div class="columns is-centered">
+    <!-- <div class="columns is-centered">
       <div class="column is-full-width">
         <h2 class="title is-3">Related Links</h2>
 
@@ -430,7 +451,7 @@
           </p>
         </div>
       </div>
-    </div>
+    </div> -->
     <!--/ Concurrent Work. -->
 
   </div>
@@ -438,7 +459,7 @@
 
 
 <section class="section" id="BibTeX">
-  <div class="container is-max-desktop content">
+  <!-- <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
     <pre><code>@article{park2021nerfies,
   author    = {Park, Keunhong and Sinha, Utkarsh and Barron, Jonathan T. and Bouaziz, Sofien and Goldman, Dan B and Seitz, Steven M. and Martin-Brualla, Ricardo},
@@ -446,20 +467,20 @@
   journal   = {ICCV},
   year      = {2021},
 }</code></pre>
-  </div>
+  </div> -->
 </section>
 
 
 <footer class="footer">
   <div class="container">
     <div class="content has-text-centered">
-      <a class="icon-link"
+      <!-- <a class="icon-link"
          href="./static/videos/nerfies_paper.pdf">
         <i class="fas fa-file-pdf"></i>
       </a>
       <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
         <i class="fab fa-github"></i>
-      </a>
+      </a> -->
     </div>
     <div class="columns is-centered">
       <div class="column is-8">
