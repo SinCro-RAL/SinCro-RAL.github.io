@@ -31,7 +31,7 @@ body {
 /* Teaser video: keep width, crop height */
 .teaser .teaser-crop {
   width: 100%;
-  aspect-ratio: 25 / 9; /* Adjust as needed (e.g., 25/9, 4/3) */
+  aspect-ratio: 26 / 9; /* Adjust as needed (e.g., 25/9, 4/3) */
   overflow: hidden;
   border-radius: 10px;
 }
