@@ -28,6 +28,22 @@ body {
 }
 
 
+/* Teaser video: keep width, crop height */
+.teaser .teaser-crop {
+  width: 100%;
+  aspect-ratio: 25 / 9; /* Adjust as needed (e.g., 25/9, 4/3) */
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.teaser .teaser-crop video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* fill width, crop top/bottom if needed */
+  object-position: center; /* focus center */
+  display: block;
+}
+
 .publication-title {
 }
 

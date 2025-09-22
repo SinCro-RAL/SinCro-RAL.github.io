@@ -129,10 +129,11 @@
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <video id="teaser" autoplay muted loop playsinline style="width:100%; height:auto; display:block;">
-        <source src="./static/videos/sincro_teaser.mp4"
-                type="video/mp4">
-      </video>
+      <div class="teaser-crop">
+        <video id="teaser" autoplay muted loop playsinline>
+          <source src="./static/videos/sincro_teaser.mp4" type="video/mp4">
+        </video>
+      </div>
       <h2 class="subtitle has-text-centered">
         <span class="dnerf">SinCro</span> enables superior RL performance from single-view RGB inputs,
         robust even under viewpoint perturbations, without requiring camera poses or synchronized multi-view images.
