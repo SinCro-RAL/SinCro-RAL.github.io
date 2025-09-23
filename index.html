@@ -227,29 +227,6 @@
             effectiveness compared to prior 3D-aware representation-based methods, 
             even when using only single-view RGB images during deployment.
           </p>
-          <!-- <p>
-            Our approach augments neural radiance fields
-            (NeRF) by optimizing an
-            additional continuous volumetric deformation field that warps each observed point into a
-            canonical 5D NeRF.
-            We observe that these NeRF-like deformation fields are prone to local minima, and
-            propose a coarse-to-fine optimization method for coordinate-based models that allows for
-            more robust optimization.
-            By adapting principles from geometry processing and physical simulation to NeRF-like
-            models, we propose an elastic regularization of the deformation field that further
-            improves robustness.
-          </p> -->
-          <!-- <p>
-            We show that <span class="dnerf">Nerfies</span> can turn casually captured selfie
-            photos/videos into deformable NeRF
-            models that allow for photorealistic renderings of the subject from arbitrary
-            viewpoints, which we dub <i>"nerfies"</i>. We evaluate our method by collecting data
-            using a
-            rig with two mobile phones that take time-synchronized photos, yielding train/validation
-            images of the same pose at different viewpoints. We show that our method faithfully
-            reconstructs non-rigidly deforming scenes and reproduces unseen views with high
-            fidelity.
-          </p> -->
         </div>
       </div>
     </div>
@@ -277,7 +254,7 @@
 <section class="section">
   <div class="container is-max-desktop">
 
-    <div class="columns is-centered">
+    <!-- <div class="columns is-centered"> -->
 
       <!-- Visual Effects. -->
       <!-- <div class="column">
@@ -312,13 +289,13 @@
 
         </div>
       </div> -->
-    </div>
+    <!-- </div> -->
     <!--/ Matting. -->
 
     <!-- Animation. -->
     <div class="columns is-centered">
       <div class="column is-full-width">
-        <!-- <h2 class="title is-3">Animation</h2> -->
+        <h2 class="title is-3">Novel view & dynamic scene rendering with single-view input</h2>
 
         <!-- Interpolating. -->
         <!-- <h3 class="title is-4">Interpolating states</h3>
@@ -355,24 +332,29 @@
         <!--/ Interpolating. -->
 
         <!-- Re-rendering. -->
-        <!-- <h3 class="title is-4">Re-rendering the input video</h3>
+        <!-- <h3 class="title is-4">Re-rendering the input video</h3> -->
         <div class="content has-text-justified">
           <p>
-            Using <span class="dnerf">Nerfies</span>, you can re-render a video from a novel
-            viewpoint such as a stabilized camera by playing back the training deformations.
+            <span class="dnerf">SinCro</span> successfully renders the dynamic scene, even in the unseen viewpoints.
+            In contrast, all baselines show jittering or fail to capture fine-grained details of the environment.
+            This demonstrates that <span class="dnerf">SinCro</span> captures the essential 3D information of the environment,
+            providing 3D-aware representation.
           </p>
         </div>
         <div class="content has-text-centered">
-          <video id="replay-video"
-                 controls
-                 muted
-                 preload
-                 playsinline
-                 width="75%">
-            <source src="./static/videos/replay.mp4"
-                    type="video/mp4">
-          </video>
-        </div> -->
+          <div class="rendering-crop">
+            <video id="replay-video"
+                   autoplay
+                   muted
+                   preload
+                   playsinline
+                   loop
+                   width="100%">
+              <source src="./static/videos/rendering.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+        </div>
         <!--/ Re-rendering. -->
 
       </div>
