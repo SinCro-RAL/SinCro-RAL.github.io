@@ -54,7 +54,7 @@
               Dongseok Shim<sup>3</sup>,
             </span>
             <span class="author-block">
-              H. Jin Kim<sup>2</sup>,
+              <a href="https://larr.snu.ac.kr/">H. Jin Kim</a><sup>2</sup>,
             </span>
           </div>
 
@@ -126,6 +126,7 @@
   </div>
 </section>
 
+
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
@@ -141,64 +142,6 @@
     </div>
   </div>
 </section>
-
-
-<!-- <section class="hero is-light is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-steve">
-          <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/steve.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-chair-tp">
-          <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/chair-tp.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-shiba">
-          <video poster="" id="shiba" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/shiba.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-fullbody">
-          <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/fullbody.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-blueshirt">
-          <video poster="" id="blueshirt" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/blueshirt.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-mask">
-          <video poster="" id="mask" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/mask.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-coffee">
-          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/coffee.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-toby">
-          <video poster="" id="toby" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/toby2.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-      </div>
-    </div>
-  </div>
-</section> -->
 
 
 <section class="section">
@@ -284,12 +227,12 @@
     </div>
     <!--/ Rendering. -->
 
-    <!-- RL evaluation. -->
+    <!-- Downstream RL. -->
     <div class="columns is-centered">
       <div class="column is-full-width">
         <h2 class="title is-3">Real-world downstream task performance</h2>
 
-        <!-- Interpolating. -->
+        <!-- RL evaluation. -->
         <h3 class="title is-4">RL evaluation</h3>
         <div class="content has-text-justified">
           <p>
@@ -312,16 +255,16 @@
           </div>
         </div>
         <br/>
-        <!--/ Interpolating. -->
+        <!--/ RL evaluation. -->
 
-        <!-- Re-rendering. -->
-        <!-- <h3 class="title is-4">RL evaluation under perturbed viewpoints</h3>
+        <!-- RL evaluation under perturbed viewpoints. -->
+        <h3 class="title is-4">RL evaluation under perturbed viewpoints</h3>
         <div class="content has-text-justified">
           <p>
-            <span class="dnerf">SinCro</span> successfully renders the dynamic scene, even in the unseen viewpoints.
-            In contrast, all baselines show jittering or fail to capture fine-grained details of the environment.
-            This demonstrates that <span class="dnerf">SinCro</span> captures the essential 3D information of the environment,
-            providing 3D-aware representation.
+            <span class="dnerf">SinCro</span> remains robust to viewpoint perturbations, consistently succeeding in downstream tasks,
+            whereas baselines mostly fail.
+            Since perturbed viewpoints are never observed during the pre-training and the RL training,
+            this robustness showcases the advantages of the proposed 3D-aware representation.
           </p>
         </div>
         <div class="content has-text-centered">
@@ -333,16 +276,16 @@
                    playsinline
                    loop
                    width="100%">
-              <source src="./static/videos/rendering.mp4"
+              <source src="./static/videos/RL_evaluation_perturbed.mp4"
                       type="video/mp4">
             </video>
           </div>
-        </div> -->
-        <!--/ Re-rendering. -->
+        </div>
+        <!--/ RL evaluation under perturbed viewpoints. -->
 
       </div>
     </div>
-    <!--/ RL evaluation. -->
+    <!--/ Downstream RL. -->
 
   </div>
 </section>
